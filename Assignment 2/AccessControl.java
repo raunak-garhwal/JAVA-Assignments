@@ -2,7 +2,7 @@
 
 class Library {
     private String bookTitle;       // Private field: accessible only within this class
-    protected String author;        // Protected field: accessible within this class, subclasses, and the same package
+    protected String author;        // Protected field: accessible within this class, subclasses, and the same 
     public String ISBN;             // Public field: accessible from anywhere
 
     // Constructor to initialize fields
@@ -66,6 +66,8 @@ public class AccessControl {
 
         // Accessing fields directly where possible (ISBN is public)
         System.out.println("\nDirectly accessing public ISBN field: " + book.ISBN);
+        // System.out.println("\nDirectly accessing public ISBN field: " + book.bookTitle); You cannot access private field of any object directly without any getter and setter.
+        System.out.println("\nDirectly accessing protected author field: " + book.author);
 
         // Displaying the updated details of the book
         System.out.println("\n--- Book Details After Modification ---");
