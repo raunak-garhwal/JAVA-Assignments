@@ -7,7 +7,8 @@ public class Armstrong {
         while (num>0) {
             cnt++;
             num/=10;
-        }return cnt;
+        }
+        return cnt;
     }
 
     static boolean checkArmstrong(int num) {
