@@ -14,9 +14,10 @@ public class Armstrong {
     static boolean checkArmstrong(int num) {
         int sum = 0;
         int numcopy = num;
+        int no_of_digit = no_of_digit(num);
         while (numcopy > 0) {
             int digit = numcopy % 10;
-            sum += Math.pow(digit, no_of_digit(num));
+            sum += Math.pow(digit, no_of_digit);
             numcopy /= 10;
         }
         return num == sum;
