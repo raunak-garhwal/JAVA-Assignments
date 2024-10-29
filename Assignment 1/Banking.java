@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 class Customer {
-
     String cust_name;
     double balance;
     String accType;
@@ -18,16 +17,18 @@ class Customer {
     void depositAmount(int acc_number, int amt) {
         if (this.acc_number == acc_number) {
             this.balance += amt;
+            System.out.println(amt + " Rs. " + "deposited in the account number - " + acc_number);
         } else {
             System.out.println("WARNING : Please enter correct account number.....");
         }
     }
-
+    
     void withdrawAmount(int acc_number, int amt) {
         if (this.acc_number == acc_number) {
             if ((this.balance - amt) >= 0) {
                 this.balance -= amt;
-            }else{
+                System.out.println(amt + " Rs. " + "withdrawn from the account number - " + acc_number);
+            } else {
                 System.out.println("WARNING : You cannot withdraw more than the available balance.....");
             }
         } else {
@@ -37,19 +38,17 @@ class Customer {
 
     void checkBalance(int acc_number) {
         if (this.acc_number == acc_number) {
-            System.out.println("\nCustomer name : " + this.cust_name);
+            System.out.println("\nCustomer Name : " + this.cust_name);
             System.out.println("Account Number : " + this.acc_number);
-            System.out.println("Type of Account(Saving/Current) : " + this.accType);
+            System.out.println("Type of Account-(Saving/Current) : " + this.accType);
             System.out.println("Available Balance : " + this.balance);
         } else {
             System.out.println("WARNING : Please enter correct account number.....");
         }
-
     }
 }
 
 public class Banking {
-
     public static void main(String[] args) {
         System.out.println("\n<--- Welcome to the Banking Portal --->");
         Customer c1 = new Customer();
@@ -116,7 +115,6 @@ public class Banking {
                     default -> {
                         System.out.println("\nPlease enter a valid available choice.");
                     }
-
                 }
             } catch (Exception e) {
                 System.out.println("\nPlease enter a valid numeric value.");

@@ -3,17 +3,13 @@ import java.util.Scanner;
 
 public class Palindrome {
 
-    static String revStr(String str) {
+    static boolean checkPalindrome(String str) {
         String revStr = "";
         for (int i = str.length() - 1; i >= 0; i--) {
             revStr += str.charAt(i);
         }
-        return revStr;
-    }
-
-    static boolean checkPalindrome(String str) {
-        return revStr(str).equalsIgnoreCase(str);
-        // return revStr(str).equals(str);
+        return revStr.equalsIgnoreCase(str);     // for case-insensitive comparison
+        // return revStr.equals(str);            // for case-sensitive comparison
     }
 
     public static void main(String[] args) {
@@ -25,6 +21,6 @@ public class Palindrome {
             System.out.println("\nThe entered String '" + str + "' is a Palindrome.");
         } else {
             System.out.println("\nThe entered String '" + str + "' is not a Palindrome.");
-        }System.out.println("");
+        }
     }
 }

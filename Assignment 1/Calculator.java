@@ -6,7 +6,6 @@ import pack.Product;
 import pack.Sum;
 
 public class Calculator {
-
     public static void main(String[] args) {
         System.out.println("\n<---Calculator Program--->");
         OUTER:
@@ -14,7 +13,7 @@ public class Calculator {
             System.out.println("\nWhat Operation would you like to perform ?");
             System.out.println("Press 1 for Addition.");
             System.out.println("Press 2 for Subtraction.");
-            System.out.println("Press 3 for Muliplication.");
+            System.out.println("Press 3 for Multiplication.");
             System.out.println("Press 4 for Division.");
             System.out.println("Press 5 to exit.");
             Scanner obj = new Scanner(System.in);
@@ -55,7 +54,7 @@ public class Calculator {
                         System.out.println("\nThe Division of the numbers is " + d.div(firstNum, secondNum));
                     }
                     case 5 -> {
-                        System.out.println("\nThanks for using this program.Please come back soon....");
+                        System.out.println("\nThanks for using this program. Please come back soon....");
                         break OUTER;
                     }
                     default -> {

@@ -19,7 +19,7 @@ class Student {
             System.out.println("Invalid name. Please enter a name with only letters and valid characters.");
         }
     }
-
+ 
     public void setAge(int age) {
         this.age = age;
     }
@@ -28,14 +28,22 @@ class Student {
         this.grade = grade;
     }
 
-    public void displayDetails() {
-        System.out.println("Name of the student: " + this.name);
-        System.out.println("Age of the student: " + this.age);
-        System.out.println("Grade of the student: " + this.grade);
-    }
-
     public String getName() {
         return this.name;
+    }
+    
+    public int getAge() {
+        return this.age;
+    }
+    
+    public int getGrade() {
+        return this.grade;
+    }
+
+    public void displayDetails() {
+        System.out.println("Name of the student: " + getName());
+        System.out.println("Age of the student: " + getAge());
+        System.out.println("Grade of the student: " + getGrade());
     }
 }
 
@@ -43,7 +51,7 @@ public class Encapsulation {
 
     public static void main(String[] args) {
         Scanner myobj = new Scanner(System.in);
-        List<Student> students = new ArrayList<>(); // List to store multiple Student objects
+        List<Student> students = new ArrayList<>();     // List to store multiple Student objects
 
         while (true) {
             System.out.println("\n<--- MENU DRIVEN PROGRAM --->");
@@ -102,7 +110,7 @@ public class Encapsulation {
 
                         if (userName.isEmpty()) {
                             // If user presses Enter, display all students
-                            System.out.println("\nListing all registered students:");
+                            System.out.println("\nListing all registered students:-");
                             for (Student student : students) {
                                 student.displayDetails();
                                 System.out.println();

@@ -9,7 +9,7 @@ public class PrimeNumber {
         int a = myobj.nextInt();
         System.out.print("Enter the ending number : ");
         int b = myobj.nextInt();
-        System.out.print("\nPrime numbers between " + a + " and " + b + " : ");
+        System.out.print("\nPrime numbers between " + a + " and " + b + " :- ");
 
         // Loop through each number in the range [a, b]
         for (int i = a; i <= b; i++) {
@@ -33,6 +33,6 @@ public class PrimeNumber {
                 System.out.print(i+" ");
             }
         }
-        System.out.println("\n");
+        System.out.print("\n");
     }
 }
