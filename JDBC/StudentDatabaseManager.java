@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class StudentDatabaseManager {
-
+    // Database credentials
     private static final String DB_URL = "jdbc:mysql://localhost:3306/";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
@@ -39,18 +39,14 @@ public class StudentDatabaseManager {
                 String choice = scanner.nextLine();
 
                 switch (choice) {
-                    case "1":
-                        insertStudent(scanner, connection);
-                        break;
-                    case "2":
-                        retrieveStudent(scanner, connection);
-                        break;
-                    case "3":
+                    case "1" -> insertStudent(scanner, connection);
+                    case "2" -> retrieveStudent(scanner, connection);
+                    case "3" -> {
                         System.out.println("Exiting...");
                         scanner.close();
                         return;
-                    default:
-                        System.out.println("Invalid Choice. Please try again.");
+                    }
+                    default -> System.out.println("Invalid Choice. Please try again.");
                 }
 
                 System.out.print("\nContinue? (y/n): ");
@@ -108,7 +104,7 @@ public class StudentDatabaseManager {
     }
 
     private static void retrieveStudent(Scanner scanner, Connection connection) throws SQLException {
-        System.out.println("\nRetrieve by:");
+        System.out.println("\nRetrieve by:-");
         System.out.println("1. ID");
         System.out.println("2. Name");
         System.out.print("\nPlease enter your choice : ");
@@ -116,14 +112,9 @@ public class StudentDatabaseManager {
         String choice = scanner.nextLine();
 
         switch (choice) {
-            case "1":
-                retrieveStudentById(scanner, connection);
-                break;
-            case "2":
-                retrieveStudentByName(scanner, connection);
-                break;
-            default:
-                System.out.println("Invalid Choice. Please try again.");
+            case "1" -> retrieveStudentById(scanner, connection);
+            case "2" -> retrieveStudentByName(scanner, connection);
+            default -> System.out.println("Invalid Choice. Please try again.");
         }
     }
 

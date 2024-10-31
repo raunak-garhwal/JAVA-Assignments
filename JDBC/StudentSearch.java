@@ -9,13 +9,12 @@ public class StudentSearch {
     // Database credentials
     private static final String URL = "jdbc:mysql://localhost:3306/school"; 
     private static final String USER = "root"; 
-    private static final String PASSWORD = ""; 
+    private static final String PASSWORD = "";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter search key (student ID or name): ");
         String searchKey = scanner.nextLine();
-
         // Search for student information
         searchStudent(searchKey);
     }

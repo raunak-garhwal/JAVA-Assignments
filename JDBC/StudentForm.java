@@ -15,8 +15,7 @@ public class StudentForm {
     private static final String DB_PASSWORD = "";
 
     public static void main(String[] args) {
-
-         // Initialize database
+    // Initialize database
     initializeDatabase();
     
     // Create and show GUI
@@ -144,7 +143,5 @@ public class StudentForm {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error initializing database.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-    
-          
+    }  
 }
