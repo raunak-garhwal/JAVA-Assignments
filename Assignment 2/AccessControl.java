@@ -1,4 +1,4 @@
-// Access Control: Create a class Library with fields for book title, author, and ISBN. Use different access modifiers (private, protected, public) for these fields. Write methods to access and modify these fields appropriately. Demonstrate access control in a main method.
+// Access Control: Create a class Library with fields for book title, author and ISBN. Use different access modifiers (private, protected, public) for these fields. Write methods to access and modify these fields appropriately. Demonstrate access control in a main method.
 
 class Library {
     private String bookTitle;       // Private field: accessible only within this class
@@ -66,7 +66,7 @@ public class AccessControl {
 
         // Accessing fields directly where possible (ISBN is public)
         System.out.println("\nDirectly accessing public ISBN field: " + book.ISBN);
-        // System.out.println("\nDirectly accessing public ISBN field: " + book.bookTitle); You cannot access private field of any object directly without any getter and setter.
+        // System.out.println("\nDirectly accessing public ISBN field: " + book.bookTitle); You cannot access private field of any object directly without any getter or setter.
         System.out.println("\nDirectly accessing protected author field: " + book.author);
 
         // Displaying the updated details of the book

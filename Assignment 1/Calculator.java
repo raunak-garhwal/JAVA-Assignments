@@ -61,6 +61,7 @@ public class Calculator {
                         System.out.println("\nPlease enter a valid avaiable choice.");
                     }
                 }
+                obj.close();
             } catch (Exception e) {
                 System.out.println("\nPlease enter a valid numeric value.");
             }

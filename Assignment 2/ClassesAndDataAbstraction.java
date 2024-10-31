@@ -57,29 +57,28 @@ class SavingsAccount extends BankAccount {
 // Main class to demonstrate the functionality of the SavingsAccount
 public class ClassesAndDataAbstraction {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         SavingsAccount myAccount = null; // Account is initially null until opened
-        int choice;
-
+        
         while (true) {
-            // Displaying the menu
-            System.out.println("\n=== Bank Account Menu ===");
+            Scanner myobj = new Scanner(System.in);
+            System.out.println("\n<--- Bank Account Menu --->");
             System.out.println("1. Open Account");
             System.out.println("2. Deposit");
             System.out.println("3. Withdraw");
             System.out.println("4. Check Balance");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-
+            
             // Handling menu selection with exception handling for input errors
             try {
-                choice = Integer.parseInt(scanner.nextLine()); // Reading user input
+                int choice = myobj.nextInt();
 
                 switch (choice) {
-                    case 1: // Open Account
+                    case 1 -> {
+                        // Open Account
                         if (myAccount == null) {
                             System.out.print("Enter initial deposit amount: ");
-                            double initialDeposit = Double.parseDouble(scanner.nextLine());
+                            double initialDeposit = myobj.nextDouble();
                             if (initialDeposit > 0) {
                                 myAccount = new SavingsAccount(initialDeposit);
                                 System.out.println("Account opened with balance: Rs." + initialDeposit);
@@ -89,49 +88,51 @@ public class ClassesAndDataAbstraction {
                         } else {
                             System.out.println("Account already opened.");
                         }
-                        break;
+                    }
 
-                    case 2: // Deposit
+                    case 2 -> {
+                        // Deposit
                         if (myAccount != null) {
                             System.out.print("Enter amount to deposit: ");
-                            double depositAmount = Double.parseDouble(scanner.nextLine());
+                            double depositAmount = myobj.nextDouble();
                             myAccount.deposit(depositAmount);
                         } else {
                             System.out.println("Please open an account first.");
                         }
-                        break;
+                    }
 
-                    case 3: // Withdraw
+                    case 3 -> {
+                        // Withdraw
                         if (myAccount != null) {
                             System.out.print("Enter amount to withdraw: ");
-                            double withdrawAmount = Double.parseDouble(scanner.nextLine());
+                            double withdrawAmount = myobj.nextDouble();
                             myAccount.withdraw(withdrawAmount);
                         } else {
                             System.out.println("Please open an account first.");
                         }
-                        break;
+                    }
 
-                    case 4: // Check Balance
+                    case 4 -> {
+                        // Check Balance
                         if (myAccount != null) {
                             System.out.println("Current Balance: Rs." + myAccount.getBalance());
                         } else {
                             System.out.println("Please open an account first.");
                         }
-                        break;
+                    }
 
-                    case 5: // Exit
+                    case 5 -> {
+                        // Exit
                         System.out.println("Exiting the program. Thank you!");
-                        scanner.close();
+                        myobj.close();
                         return;
+                    }
 
-                    default:
-                        System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    default -> System.out.println("Invalid choice. Please enter a number between 1 and 5.");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a valid numerical value.");
             }
         }
     }
 }
-
-

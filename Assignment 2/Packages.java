@@ -1,6 +1,6 @@
 // Packages: Create a package named com.example.shapes. Inside this package, define a class Circle with methods to calculate the area and circumference. Write a program to use this package and demonstrate the functionality.
 
-import com_example_shapes.Circle;
+import com.example.shapes.Circle;
 import java.util.Scanner;
 
 public class Packages {
@@ -16,6 +16,7 @@ public class Packages {
                 double radius = myobj.nextDouble();
                 c.calculateCircumference(radius);
                 c.calculateArea(radius);
+                myobj.close();
                 break;
             } else {
                 System.out.println("WARNING :- Invalid input. Please enter an integer value......");
